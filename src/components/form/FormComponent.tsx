@@ -9,7 +9,7 @@ type FormComponentProps = {
   userInfo: IForm
 }
 
-const FormComponent = ({ handleChange, handleSubmit, handleClear, userInfo }: FormComponentProps) => {
+const FormComponent: React.FC<FormComponentProps> = ({ handleChange, handleSubmit, handleClear, userInfo }: FormComponentProps): JSX.Element => {
   const { name, description, comment } = userInfo;
   return(
     <div className='form-container'>

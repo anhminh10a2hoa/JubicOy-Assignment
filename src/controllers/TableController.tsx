@@ -1,22 +1,31 @@
 import { IForm } from "../interfaces/IForm";
 
-const SEPERATE_ARRAY = "#$%";
-const SEPERATE_VALUE = "^&^";
-const SEPERATE_KEY = "!@%";
-
-export function getDataFromLocalStorage(){
+export function getAllDataFromLocalStorage(){
   const data: string | null = localStorage.getItem('data');
   if(data === null) {
     return [];
   }
-  const listDataReturn: Array<IForm> = [];
-  const arrayData = data.split(SEPERATE_ARRAY);
-  const temp: string[][] = [];
-  for(let i = 0; i < arrayData.length; i++){
-    arrayData[i].split(SEPERATE_VALUE).map((data: string) => {
-      temp.push(data.split(SEPERATE_KEY));
-    })
-    listDataReturn[i] = Object.fromEntries(temp);
-  }
+  const listDataReturn: Array<IForm> = JSON.parse(data);
   return listDataReturn;
+}
+
+export function deleteDataFromLocalStorage(index: number){
+  const data: string | null = localStorage.getItem('data');
+  if(data !== null) {
+    let newList = JSON.parse(data);
+    newList.splice(index, 1);
+    localStorage.setItem('data',JSON.stringify(newList))
+    return newList;
+  }
+  return [];
+}
+
+export function getADataFromLocalStorage(index: number){
+  const data: string | null = localStorage.getItem('data');
+  if(data === null) {
+    return [];
+  }
+  const listDataReturn: Array<IForm> = JSON.parse(data);
+  const dataReturn = listDataReturn.splice(index, 1);
+  return dataReturn;
 }

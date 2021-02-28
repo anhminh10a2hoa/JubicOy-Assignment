@@ -59,10 +59,23 @@
   }
 
   .button-container {
-    position: relative;
+    position: absolute;
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
-    top: 6.5em;
+    top: 7.5em;
+    right: 1em;
+  }
+}
+
+@media screen and (max-width: 700px){
+  .description-input {
+    width: 40.5%;
+  }
+
+  label {
+    font-size: 0.75em;
+    left: 0em;
+    right: 0em;
   }
 }
