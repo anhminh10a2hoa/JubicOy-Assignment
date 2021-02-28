@@ -29,7 +29,7 @@ npm start
 
 ## Deploy
 
-+ I deployed to Heroku and you can access with the Link below:
++ I deployed to Heroku using [buildpack](https://github.com/mars/create-react-app-buildpack) and you can access with the Link below:
 
   [https://jubic-assignment.herokuapp.com](https://jubic-assignment.herokuapp.com)
 
