@@ -1,26 +1,18 @@
-.table-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  margin: 1.5em;
   width: 100%;
+}
 
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    margin: 1.5em;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  button {
-    height: 3em;
-    width: 5em;
-    margin: 0.5em;
-  }
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+button {
+  height: 3em;
+  width: 5em;
+  margin: 0.5em;
 }

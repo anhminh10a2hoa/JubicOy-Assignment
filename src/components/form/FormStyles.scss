@@ -1,81 +1,40 @@
 .form-container {
   background-color: #f6f6f6;
-  position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr;
   height: 180px;
   border-radius: 0.5em;
   margin: 1.5em;
-  padding: 0 1em;
+  padding: 1em;
 
-  label {
-    font-weight: 400;
-    color: #a6a6a6;
+  .name-container {
+    grid-column: 1/1;
+    grid-row: 1/1;
   }
 
-  input {
-    height: 30px;
-    margin-left: 1em; 
+  .description-container {
+    grid-column: 2/4;
+    grid-row: 1/1;
   }
 
-  .name-and-description-container {
-    display: inline-block;
-  }
-
-  label {
-    position: absolute;
-    width: 95%;
-    left: 1em;
-    display: flex;
-    align-items: center;
-  }
-
-  .name-label {
-    top: 1em;
-    .name-input {
-      width: 20%;
-    }
-  }
-
-  .description-label {
-    top: 1em;
-    margin-left: 30%;
-    .description-input {
-      width: 51.5%;
-    }
-  }
-
-  .comment-label {
-    top: 5em;
-
-    .comment-input {
-      width: 86.5%;
-    }
-  }
-
-  button {
-    height: 3em;
-    width: 5em;
-    margin: 0.5em;
+  .comment-container {
+    grid-column: 1/4;
+    grid-row: 2/2;
   }
 
   .button-container {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-    top: 7.5em;
-    right: 1em;
+    grid-column: 3/4;
+    grid-row: 3/3;
+    button {
+      height: 3em;
+      width: 5em;
+      margin: 0.5em;
+    }
   }
 }
 
-@media screen and (max-width: 700px){
-  .description-input {
-    width: 40.5%;
-  }
-
-  label {
-    font-size: 0.75em;
-    left: 0em;
-    right: 0em;
-  }
+input {
+  height: 50%;
+  width: 90%;
 }

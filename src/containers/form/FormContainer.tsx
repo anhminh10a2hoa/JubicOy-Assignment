@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import FormComponent from '../components/form/FormComponent';
-import { postDataToLocalStorage } from '../controllers/FormController';
-import { IForm } from '../interfaces/IForm';
+import FormComponent from '../../components/form/FormComponent';
+import { postDataToLocalStorage } from '../../controllers/FormController';
+import { IForm } from '../../interfaces/IForm';
 
 const FormContainer = () => {
   const [userInfo, setUserInfo] = useState({name: "", description: "", comment: ""} as IForm);

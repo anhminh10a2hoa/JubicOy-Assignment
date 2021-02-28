@@ -12,30 +12,26 @@ type FormComponentProps = {
 const FormComponent: React.FC<FormComponentProps> = ({ handleChange, handleSubmit, handleClear, userInfo }: FormComponentProps): JSX.Element => {
   const { name, description, comment } = userInfo;
   return(
-    <div className='form-container'>
-      <form onSubmit={handleSubmit}>
-        <div className='name-and-description-container'>
-          <label className='name-label'>
-            Name
-            <input className='name-input' type="text" name="name" value={name} onChange={handleChange}/>
-          </label>
-          <label className='description-label'>
-            Description
-            <input className='description-input' type="text" name="description" value={description} onChange={handleChange}/>
-          </label>
+    <form onSubmit={handleSubmit}>
+      <div className='form-container'>
+        <div className='name-container'>
+          <label className='name-label'>Name</label><br />
+          <input className='name-input' type="text" name="name" value={name} onChange={handleChange}/>
         </div>
-        <div>
-          <label className='comment-label'>
-            Comment
-            <input className='comment-input' type="text" name="comment" value={comment} onChange={handleChange}/>
-          </label>
+        <div className='description-container'>
+          <label className='description-label'>Description</label><br />
+          <input className='description-input' type="text" name="description" value={description} onChange={handleChange}/>
+        </div>
+        <div className='comment-container'>
+          <label className='comment-label'>Comment</label><br />
+          <input className='comment-input' type="text" name="comment" value={comment} onChange={handleChange}/>
         </div>
         <div className='button-container'>
-          <button onClick={handleClear}>Clear</button>
+          <button type='button' onClick={handleClear}>Clear</button>
           <button type='submit'>Add</button>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   )
 }
 

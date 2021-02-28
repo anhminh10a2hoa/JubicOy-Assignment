@@ -1,6 +1,6 @@
 import { IForm } from "../interfaces/IForm";
 
-export function postDataToLocalStorage(userInfo: IForm){
+export function postDataToLocalStorage(userInfo: IForm): void{
   const existData: string | null = localStorage.getItem('data');
   let list = existData ? JSON.parse(existData) : [];
   list.push(userInfo);
