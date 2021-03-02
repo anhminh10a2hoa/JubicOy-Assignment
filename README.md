@@ -24,8 +24,17 @@ npm start
 
 ## Feature
 
-+ I designed the web page without any framework UI
++ UI: no UI Framework
 + Post/get/get all/delete data that store in the local storage
++ Test: Jest/Enzyme
+
+## Test
+
++ Test the application:
+
+```
+npm test
+```
 
 ## Deploy
 

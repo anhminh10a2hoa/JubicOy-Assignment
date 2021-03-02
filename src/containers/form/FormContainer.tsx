@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import FormComponent from '../../components/form/FormComponent';
 import { postDataToLocalStorage } from '../../controllers/FormController';
 import { IForm } from '../../interfaces/IForm';
+import { checkInputValidator } from '../../utils/checkInputValidator';
 
 const FormContainer = () => {
-  const [userInfo, setUserInfo] = useState({name: "", description: "", comment: ""} as IForm);
+  const [userInfo, setUserInfo] = useState<IForm>({name: "", description: "", comment: ""});
 
   const handleChange = (event: any) => {
     event.preventDefault();
@@ -12,8 +13,13 @@ const FormContainer = () => {
     setUserInfo(preState => ({ ...preState, [name]: value }));
   }
 
-  const handleSubmit = () => {
-    postDataToLocalStorage(userInfo);
+  const handleSubmit = (event: React.FormEvent) => {
+    if(checkInputValidator(userInfo).length > 0){
+      alert(checkInputValidator(userInfo));
+      event.preventDefault();
+    } else {
+      postDataToLocalStorage(userInfo);
+    }
   }
 
   const handleClear = () => {

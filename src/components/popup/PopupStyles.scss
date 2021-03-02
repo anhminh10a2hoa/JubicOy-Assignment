@@ -10,6 +10,8 @@
   z-index: 20;
   border: 1px solid black;
   overflow-y: scroll;
+  overflow-x: hidden;
+  word-wrap: break-word;
 }
 
 .popup {

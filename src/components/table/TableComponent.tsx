@@ -5,7 +5,7 @@ import './TableStyles.scss';
 type TableComponentProps = {
   listData: Array<IForm>,
   onDelete: (index: number) => void,
-  onOpenDetail: (index: number, show: boolean) => void,
+  onOpenDetail: (index: number) => void,
 }
 
 const TableComponent: React.FC<TableComponentProps> = ({listData, onDelete, onOpenDetail}): JSX.Element => {
@@ -26,7 +26,7 @@ const TableComponent: React.FC<TableComponentProps> = ({listData, onDelete, onOp
             <td width={'60%'}>{data.description}</td>
             <td width={'20%'}>
               <button onClick={() => onDelete(i)}>Delete</button>
-              <button onClick={() => onOpenDetail(i, true)}>Details</button>
+              <button onClick={() => onOpenDetail(i)}>Details</button>
             </td>
           </tr>
         </tbody>

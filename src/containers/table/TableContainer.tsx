@@ -5,7 +5,7 @@ import { deleteDataFromLocalStorage, getADataFromLocalStorage, getAllDataFromLoc
 import { IForm } from '../../interfaces/IForm';
 import './TableContainerStyles.scss'
 
-const TableContainer = () => {
+const TableContainer: React.FC = () => {
   const [listData, setListData] = useState([] as Array<IForm>)
   const [dataOnDetail, setDataOnDetail] = useState({} as IForm | null)
   const [isShowing, setIsShowing] = useState(false);
@@ -16,13 +16,12 @@ const TableContainer = () => {
 
   const onDelete = (index: number) => {
     setListData(deleteDataFromLocalStorage(index));
-    window.location.reload();
+    console.log(listData);
   }
 
-  const onOpenDetail = (index: number, isShowng: boolean) => {
+  const onOpenDetail = (index: number) => {
     setDataOnDetail(getADataFromLocalStorage(index));
-    console.log(dataOnDetail);
-    setIsShowing(isShowng);
+    setIsShowing(true);
   }
 
   const onCloseDetail = () => {

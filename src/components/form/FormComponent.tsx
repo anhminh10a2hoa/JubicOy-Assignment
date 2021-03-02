@@ -3,10 +3,10 @@ import { IForm } from '../../interfaces/IForm';
 import './FormStyles.scss';
 
 type FormComponentProps = {
-  handleSubmit: () => void,
-  handleChange: (event: any) => void,
-  handleClear: (event: any) => void,
-  userInfo: IForm
+  handleSubmit: (event: React.FormEvent) => void,
+  handleChange: (event: React.FormEvent<HTMLInputElement>) => void,
+  handleClear: () => void,
+  userInfo: IForm,
 }
 
 const FormComponent: React.FC<FormComponentProps> = ({ handleChange, handleSubmit, handleClear, userInfo }: FormComponentProps): JSX.Element => {

@@ -3,7 +3,7 @@ import './App.css';
 import FormContainer from './containers/form/FormContainer';
 import TableContainer from './containers/table/TableContainer';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <h1>Simple Form</h1>

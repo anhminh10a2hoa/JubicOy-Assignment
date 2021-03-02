@@ -1,9 +1,13 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
 import App from './App';
+import { shallow } from 'enzyme';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe("render component", () => {
+  it("renders App component without crashing", () => {
+    shallow(<App />);
+  });
+  it("renders App component header without crashing", () => {
+    const wrapper = shallow(<App />);
+    const header = (<h1>Simple Form</h1>);
+    expect(wrapper.contains(header)).toEqual(true);
+  });
+})
